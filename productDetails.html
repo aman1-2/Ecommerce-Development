@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="CSS/productDetails.css">
+</head>
+<body>
+    <nav id="header">
+        <div class="container">
+            <div class="row">
+                <div class="header-wrapper d-flex justify-content-between">
+                    <!-- We have made this div flex, with justify content as space between -->
+                    <div class="logo inline-block">
+                        <a href="index.html" class="text-decoration-none">Shop Cart</a>
+                    </div>
+                    <div class="user-actions d-flex flex-row">
+                        <a href="cart.html">Cart</a>
+                        <div class="user-intro">Hi User</div>
+                        <div class="logout-btn" id="logout">Logout</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="product-details-wrapper d-flex justify-content-between align-items-start flex-row">
+                <div class="product-img d-flex">
+                    <img src="img/product.jpeg" alt="">
+                </div>
+
+                <div class="product-details-box d-flex flex-column">
+                    <div id="productDetails">
+                        <div class="product-name">Some Product</div>
+                        <div class="product-price fw-bold">&#8377; 10000</div>
+                        <div class="product-desc">
+                            <div class="product-desc-title fw-bold">Product Title</div>
+                            <div class="product-desc-data">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam 
+                                qui ipsum nemo itaque architecto ipsa, exercitationem repellat tenetur dicta 
+                                doloribus? Beatae modi numquam laboriosam nisi molestiae. Tenetur, hic amet.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam 
+                                qui ipsum nemo itaque architecto ipsa, exercitationem repellat tenetur dicta 
+                                doloribus? Beatae modi numquam laboriosam nisi molestiae. Tenetur, hic amet.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-details-action btn btn-primary text-decoration-none">Add to Cart</div>
+                    <a href="cart.html" id="goToCartBtn" class="product-details-action btn btn-warning text-decoration-none">
+                        Go to Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div id="productDetailsPage"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
