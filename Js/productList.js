@@ -1,11 +1,13 @@
 //Now i am going to write all my JS logic inside the domContentLoaded event so that all the JS logic runs once the content has been loaded.
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     async function fetchProducts() {
         const response = await axios.get("https://fakestoreapi.com/products");
         return response.data;
     }
 
+    const downloadedProducts = await fetchProducts();
+    
     async function populateProducts(flag, customProducts) { //Here we are calling the populate products with paramter as flag and customProduct
         let products = customProducts;
         if(!flag) { //If the flag is false then we need to call the normal fetch function for fetching all the products
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const productList = document.getElementById('productList'); //Before populating the filtered product we need to remove the already present product list.
         const minPrice = Number(document.getElementById('minPrice').value);
         const maxPrice = Number(document.getElementById('maxPrice').value);
-        const products = await fetchProducts();
+        const products = downloadedProducts; //This will do filtering even more faster because now we are fetching the complete products again and again.
         productList.innerHTML = '';
         filterProducts = products.filter(product => product.price >= minPrice && product.price <= maxPrice);
         populateProducts(true, filterProducts);
