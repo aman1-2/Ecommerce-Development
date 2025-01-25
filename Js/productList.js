@@ -7,11 +7,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const downloadedProducts = await fetchProducts();
+
+    async function fetchProductsByCategory(category) {
+        const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`);
+        return response.data;
+    }
     
     async function populateProducts(flag, customProducts) { //Here we are calling the populate products with paramter as flag and customProduct
         let products = customProducts;
+
+        const queryParam = new URLSearchParams(window.location.search);
+        const queryParamObject = Object.fromEntries(queryParam.entries());
+
         if(!flag) { //If the flag is false then we need to call the normal fetch function for fetching all the products
-            products = await fetchProducts();
+            if(queryParamObject['category']) {
+                products = await fetchProductsByCategory(queryParamObject['category']);
+            } else {
+                products = downloadedProducts;
+            }
         } //If the flag value is true then it means there is some filter options that applied for the products
         products.forEach((product) => {
             const productList = document.getElementById("productList");
