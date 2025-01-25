@@ -91,6 +91,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    populateCategories();
-    populateProducts(false);
+    //Segregated the logic of downloading and populating and this only we have written an logic to hide the loader.
+    async function downloadContentAndPopulate() {
+        Promise.all([populateProducts(false), populateCategories()])
+        .then(()=>{
+            const loaderBackdrop = document.getElementById('loader-backdrop');
+            loaderBackdrop.style.display = "none";
+        });
+    }
+
+    downloadContentAndPopulate()
 });
