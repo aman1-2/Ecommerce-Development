@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             productItem.target = "_blank";
             image.src = product.image;
             productName.textContent = (product.title.length > 12) ? product.title.substring(0, 12) + '...' : product.title;
-            productPrice.textContent = `&#8377; ${product.price}`;
+            productPrice.textContent = `$ ${product.price}`;
 
             productItem.classList.add("product-item", "text-decoration-none", "d-inline-block")
             ProductImage.classList.add("product-img");
