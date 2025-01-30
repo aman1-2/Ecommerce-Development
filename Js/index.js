@@ -8,8 +8,7 @@ async function fetchCategories() {
 
 async function populateCategories() {
     const categories = await fetchCategories(); //This will given an array and we have to iterate on our array and populate the DOM.
-    const loaderBackdrop = document.getElementById('loader-backdrop');
-    loaderBackdrop.style.display = "none";
+    removeLoader();
     const categoryList = document.getElementById("categoryList");
     categories.forEach((category) => {
         const categoryHolder = document.createElement('div');

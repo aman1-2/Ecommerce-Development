@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function populateProducts(flag, customProducts) { //Here we are calling the populate products with paramter as flag and customProduct
         let products = customProducts;
 
-        const queryParam = new URLSearchParams(window.location.search);
-        const queryParamObject = Object.fromEntries(queryParam.entries());
+        const queryParamObject = getQueryParams();
 
         if(!flag) { //If the flag is false then we need to call the normal fetch function for fetching all the products
             if(queryParamObject['category']) {
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const productName = document.createElement('div');
             const productPrice = document.createElement('div');
 
-            productItem.href = "productDetails.html";
+            productItem.href = `productDetails.html?id=${product.id}`;
             productItem.target = "_blank";
             image.src = product.image;
             productName.textContent = (product.title.length > 12) ? product.title.substring(0, 12) + '...' : product.title;
@@ -95,8 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function downloadContentAndPopulate() {
         Promise.all([populateProducts(false), populateCategories()])
         .then(()=>{
-            const loaderBackdrop = document.getElementById('loader-backdrop');
-            loaderBackdrop.style.display = "none";
+            removeLoader();
         });
     }
 
