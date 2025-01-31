@@ -8,26 +8,45 @@
     <link rel="stylesheet" href="CSS/common.css">
     <link rel="stylesheet" href="CSS/cart.css">
 </head>
+
 <body>
 
+    <div class="loader-backdrop" id="loader-backdrop">
+        <div class="loader" id="loader">
+            <div></div>
+        </div>
+    </div>
+
     <div id="cartPage">
+
         <!-- Header -->
         <nav id="header">
+
             <div class="container">
+
                 <div class="row">
+
                     <div class="header-wrapper d-flex justify-content-between">
+
                         <!-- We have made this div flex, with justify content as space between -->
                         <div class="logo inline-block">
                             <a href="index.html" class="text-decoration-none">Shop Cart</a>
                         </div>
+
                         <div class="user-actions d-flex flex-row">
+
                             <a href="cart.html">Cart</a>
                             <div class="user-intro">Hi User</div>
                             <div class="logout-btn" id="logout">Logout</div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </nav>
 
         <div class="container">
@@ -43,6 +62,7 @@
                         <div class="order-details-title">Order Details</div>
 
                         <div class="order-details-product d-flex flex-row">
+
                             <div class="order-details-product-img d-flex">
                                 <img src="img/product.jpeg" alt="">
                             </div>
@@ -53,8 +73,11 @@
                             </div>
 
                             <div class="order-details-product-action d-flex flex-column">
+
                                 <div class="order-details-product-quantity">
+
                                     <div class="fw-bold">Quantity</div>
+
                                     <div class="form-group">
                                         <select name="" id="" class="form-select">
                                             <option value="1">1</option>
@@ -64,99 +87,15 @@
                                             <option value="5">5</option>
                                         </select>
                                     </div>
+
                                 </div>
 
                                 <div class="order-details-product-remove btn btn-danger">Remove</div>
+
                             </div>
+                            
                         </div>
                         <hr>
-
-                        <!-- Below Product are copy paste -->
-                        <div class="order-details-product d-flex flex-row">
-                            <div class="order-details-product-img d-flex">
-                                <img src="img/product.jpeg" alt="">
-                            </div>
-
-                            <div class="order-details-product-data d-flex flex-column">
-                                <div>Some Profoduct</div>
-                                <div>&#8377; 10000</div>
-                            </div>
-
-                            <div class="order-details-product-action d-flex flex-column">
-                                <div class="order-details-product-quantity">
-                                    <div class="fw-bold">Quantity</div>
-                                    <div class="form-group">
-                                        <select name="" id="" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="order-details-product-remove btn btn-danger">Remove</div>
-                            </div>
-                        </div>
-                        <hr>
-
-                        <div class="order-details-product d-flex flex-row">
-                            <div class="order-details-product-img d-flex">
-                                <img src="img/product.jpeg" alt="">
-                            </div>
-
-                            <div class="order-details-product-data d-flex flex-column">
-                                <div>Some Profoduct</div>
-                                <div>&#8377; 10000</div>
-                            </div>
-
-                            <div class="order-details-product-action d-flex flex-column">
-                                <div class="order-details-product-quantity">
-                                    <div class="fw-bold">Quantity</div>
-                                    <div class="form-group">
-                                        <select name="" id="" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="order-details-product-remove btn btn-danger">Remove</div>
-                            </div>
-                        </div>
-                        <hr>
-
-                        <div class="order-details-product d-flex flex-row">
-                            <div class="order-details-product-img d-flex">
-                                <img src="img/product.jpeg" alt="">
-                            </div>
-
-                            <div class="order-details-product-data d-flex flex-column">
-                                <div>Some Profoduct</div>
-                                <div>&#8377; 10000</div>
-                            </div>
-
-                            <div class="order-details-product-action d-flex flex-column">
-                                <div class="order-details-product-quantity">
-                                    <div class="fw-bold">Quantity</div>
-                                    <div class="form-group">
-                                        <select name="" id="" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="order-details-product-remove btn btn-danger">Remove</div>
-                            </div>
-                        </div>
 
                     </div>
 
@@ -167,33 +106,40 @@
                             <div class="price-details-title fw-bold">Price Details</div>
 
                             <div class="price-details-data">
+
                                 <div class="price-details-item d-flex flex-row justify-content-between">
                                     <div>Price</div>
-                                    <div>&#8377; 10000</div>
+                                    <div id="total-price"></div>
                                 </div>
+
                                 <div class="price-details-item d-flex flex-row justify-content-between">
                                     <div>Discount</div>
-                                    <div>&#8377; 10</div>
+                                    <div>10</div>
                                 </div>
+
                                 <div class="price-details-item d-flex flex-row justify-content-between">
                                     <div>Delivery Charges</div>
                                     <div>FREE</div>
                                 </div>
+
                                 <div class="price-details-item d-flex flex-row justify-content-between">
                                     <div>Total Cost</div>
-                                    <div>&#8377; 9990</div>
+                                    <div id="net-price"></div>
                                 </div>
+
                             </div>
 
                         </div>
 
                         <div class="price-details-btn-group">
+
                             <a href="productList.html" class="continue-shopping-btn btn btn-info text-decoration-none">
                                 Continue Shopping
                             </a>
                             <a href="checkout.html" class="checkout-btn btn btn-primary text-decoration-none">
                                 Checkout
                             </a>
+                            
                         </div>
 
                     </div>
@@ -206,7 +152,12 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="Js/common.js"></script>
+    <script src="Js/cart.js"></script>
+
 </body>
+
 </html>

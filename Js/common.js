@@ -13,3 +13,9 @@ async function fetchProductById(id) {
     const product = await axios.get(`https://fakestoreapi.com/products/${id}`)
     return product.data;
 }
+
+//Cart logic implementation from here
+async function fetchCartById(id) {
+    const cart  = await axios.get(`https://fakestoreapi.com/carts/${id}`);
+    return cart.data;
+}
